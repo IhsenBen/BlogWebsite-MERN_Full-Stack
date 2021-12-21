@@ -26,6 +26,7 @@ export default function SinglePost() {
         </div>
         <p className="singlePostDesc">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima non, eaque veritatis autem explicabo optio hic, dolore voluptatem nam consectetur tenetur soluta cupiditate labore alias libero? Quasi porro illum expedita, iure at, eum quae atque pariatur unde tempora libero nam obcaecati aliquam laboriosam? Harum pariatur ipsam, ipsa omnis officiis quas quos quo nostrum eum dolorem architecto, nulla ipsum cum, molestias odit vitae? Quidem ipsa ad dolor exercitationem earum, provident ea natus qui architecto vero error, ipsum adipisci aut iste.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ipsa repellat eveniet dolore, ipsam facilis eum explicabo ducimus ipsum perferendis tempora earum reprehenderit quam dolores temporibus dignissimos debitis expedita porro error similique officia cumque, atque quibusdam. Ipsam consequatur ex quae sapiente officia nulla nobis rerum officiis consectetur. Natus?
         </p>
       </div>
     </div>
