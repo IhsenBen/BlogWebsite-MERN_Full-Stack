@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
+const postRoute = require("./routes/posts");
 
 /*  dotenv to ""hide sensitive data like api keys and credentials"*/
 dotenv.config();
@@ -19,10 +20,9 @@ mongoose
 
   app.use('/api/auth', authRoute);
   app.use('/api/users', userRoute);
+  app.use('/api/posts', postRoute);
 
-app.use('/', (req, res) => {
-  console.log('hey this is main url');
-});
+
 
 app.listen('8000', () => {
   console.log('Backend is runing...😎');
