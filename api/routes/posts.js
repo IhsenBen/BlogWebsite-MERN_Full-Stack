@@ -8,16 +8,27 @@ const Post = require("../models/Post");
 //save it to the database with the user id
 router.post("/", async (req, res) => {
     const newPost = new Post(req.body);
+    const entredUser = newPost.username;
+
     try {
-      const savedPost = await newPost.save();
-      res.status(200).json(savedPost);
+      //find the entred User in the DB
+      const user = await User.findOne({username: entredUser});
+      //if the user is not found
+      if (!user) {
+        res.status(401).json({ message: "Sorry you must be a registered User to write Posts :(" });}
+      //if the user is found
+      else {
+        const savedPost = await newPost.save();
+        res.status(200).json(savedPost);
+      }
+     
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
 
-  //update post with user id    //update post with user id
+  //update post with post id    
   router.put("/:id", async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
