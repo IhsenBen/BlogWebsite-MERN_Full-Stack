@@ -1,9 +1,10 @@
 import "./post.css";
-
-export default function Post() {
+// the prop post is coming from the value p in <posts component < home component
+export default function Post({post}) {
     return (
         <div className="post">
-          <img className="postImg" src="https://images.pexels.com/photos/238622/pexels-photo-238622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+          {post.photo && ( <img className="postImg" src="https://images.pexels.com/photos/238622/pexels-photo-238622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />)}
+         
         
         <div className="postInfo">
           <div className="postCats">
@@ -11,12 +12,13 @@ export default function Post() {
             <span className="postCat">Life</span>
           </div>
           <span className="postTitle">
-            Lorem ipsum dolor sit amet.
+            {post.title}
           </span>
           <hr />
-          <span className="postDate">1 hour ago</span>
+          {/* note to self: this todate js method is really useful ( auto conversion to client friendly date+ string) */}
+          <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
         </div>
-        <p className="postDesc"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero distinctio mollitia qui neque optio minus voluptatum commodi, dignissimos ipsam minima hic cumque dicta eos molestiae quod nostrum eaque recusandae soluta. </p>
+        <p className="postDesc"> {post.desc} </p>
         </div>
     )
 }
